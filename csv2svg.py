@@ -6,6 +6,22 @@ import os
 # Get the command line argument for the CSV file
 csv_file = sys.argv[1]
 
+# The rest of the command line arguments are optional
+if (len(sys.argv) < 2):
+    print("Usage: python csv2svg.py <csv_file> <font_family> <font_size> <font_style>")
+    print("Example: python csv2svg.py addresses.csv 'Arial' 16 'italic'")
+    sys.exit()
+
+if (len(sys.argv) > 2):
+    font_family = sys.argv[2]
+if (len(sys.argv) > 3):
+    font_size = int(sys.argv[3])
+if (len(sys.argv) > 4):
+    font_style = sys.argv[4]
+
+
+
+
 # Function to generate SVG file
 def generate_svg(address, filename, font_family, font_size=14, width=350, height=100):
 
